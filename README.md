@@ -67,3 +67,10 @@ export default tseslint.config([
    },
 ])
 ```
+
+<!-- ///////////////////// -->
+
+Branching strategy:
+
+- At first: Trunk-based development. Commits with architectural & setup stuff merged directly into main
+- Once features are being made: GitHub Flow: ie feature branches branched off of and merged into main after Pull Request
