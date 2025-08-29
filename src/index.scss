@@ -1,4 +1,4 @@
-@import './styles/variables.scss';
+@use './styles/variables.scss' as vars;
 
 :root {
    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -7,7 +7,7 @@
 
    color-scheme: light dark;
    color: black; // TODO: decide on font coloring and make variables
-   background-color: $color-background;
+   background-color: vars.$color-background;
 
    font-synthesis: none;
    text-rendering: optimizeLegibility;
@@ -71,7 +71,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
    :root {
-      color: $color-background;
+      color: vars.$color-background;
       background-color: #ffffff;
    }
    a:hover {
@@ -83,7 +83,7 @@ button:focus-visible {
 }
 
 .card-big {
-   background-color: $color-light;
+   background-color: vars.$color-light;
    border-radius: 10px;
    padding: 1.5em;
    text-align: left;
