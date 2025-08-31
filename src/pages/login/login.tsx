@@ -63,7 +63,7 @@ const Login = () => {
    const handleDismissErrorSnackBar = () => setErrorSnackBarOpen(false)
 
    // Ensures that default behaviour (such as unwanted side effects like focusing or selecting the button) does not occur when toggling visibilty btn
-   const handleMouseUpOrDownHIdeShowPassword = (
+   const handleMouseUpOrDownHideShowPassword = (
       event: React.MouseEvent<HTMLButtonElement>
    ) => {
       event.preventDefault()
@@ -158,8 +158,8 @@ const Login = () => {
                                     : 'display the password'
                               }
                               onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseUpOrDownHIdeShowPassword}
-                              onMouseUp={handleMouseUpOrDownHIdeShowPassword}
+                              onMouseDown={handleMouseUpOrDownHideShowPassword}
+                              onMouseUp={handleMouseUpOrDownHideShowPassword}
                               edge="end"
                            >
                               {showPassword ? (
