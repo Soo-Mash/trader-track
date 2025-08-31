@@ -12,6 +12,7 @@ import {
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router'
 
 type ValidationRule = {
    required?: boolean
@@ -46,6 +47,8 @@ const loginFormInitialValues = {
 }
 
 const Login = () => {
+   const navigate = useNavigate()
+
    const [submitAttempted, setSubmitAttempted] = useState<boolean>(false)
    const [showPassword, setShowPassword] = useState<boolean>(false)
    const [errorSnackBarOpen, setErrorSnackBarOpen] = useState<boolean>(false)
@@ -100,7 +103,7 @@ const Login = () => {
       if (!loginFormErrors.email && !loginFormErrors.password) {
          const credentialsValid = checkloginCredentials()
          if (credentialsValid) {
-            // TODO: navigate to dashboard page
+            navigate('/dashboard', { state: { from: 'login' } })
          } else {
             handleShowErrorSnackBar()
          }
