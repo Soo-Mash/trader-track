@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import './login.scss'
 import {
    Button,
    FormControl,
@@ -116,82 +117,75 @@ const Login = () => {
 
    return (
       <div className="page-login">
+         {/* TODO: convert to MUI Paper with custom styling instead of div with custom styling */}
          <div className="card-big login-card ">
-            <div className="container-login-card">
-               <h2>Login</h2>
-               <FormControl
-                  sx={{ marginBottom: '1em' }}
-                  variant="outlined"
-                  fullWidth
-                  error={!!loginFormErrors.email && !!submitAttempted}
-               >
-                  <InputLabel>Enter your email address</InputLabel>
-                  <OutlinedInput
-                     id="email"
-                     type="text"
-                     label="Enter your email address"
-                     value={loginFormValues.email}
-                     onChange={(e) => setFormValue('email', e.target.value)}
-                  />
-                  {loginFormErrors.email && submitAttempted && (
-                     <FormHelperText error>
-                        {loginFormErrors.email}
-                     </FormHelperText>
-                  )}
-               </FormControl>
+            <h2>Login</h2>
+            <FormControl
+               sx={{ marginBottom: '1em' }}
+               variant="outlined"
+               fullWidth
+               error={!!loginFormErrors.email && !!submitAttempted}
+            >
+               <InputLabel>Enter your email address</InputLabel>
+               <OutlinedInput
+                  id="email"
+                  type="text"
+                  label="Enter your email address"
+                  value={loginFormValues.email}
+                  onChange={(e) => setFormValue('email', e.target.value)}
+               />
+               {loginFormErrors.email && submitAttempted && (
+                  <FormHelperText error>{loginFormErrors.email}</FormHelperText>
+               )}
+            </FormControl>
 
-               <FormControl
-                  sx={{ marginBottom: '1em' }}
-                  variant="outlined"
-                  fullWidth
-                  error={!!loginFormErrors.password && !!submitAttempted}
-               >
-                  <InputLabel>Enter your password</InputLabel>
-                  <OutlinedInput
-                     id="password"
-                     type={showPassword ? 'text' : 'password'}
-                     value={loginFormValues.password}
-                     onChange={(e) => setFormValue('password', e.target.value)}
-                     endAdornment={
-                        <InputAdornment position="end">
-                           <IconButton
-                              aria-label={
-                                 showPassword
-                                    ? 'hide the password'
-                                    : 'display the password'
-                              }
-                              onClick={handleClickShowPassword}
-                              onMouseDown={handleMouseUpOrDownHideShowPassword}
-                              onMouseUp={handleMouseUpOrDownHideShowPassword}
-                              edge="end"
-                           >
-                              {showPassword ? (
-                                 <VisibilityOff />
-                              ) : (
-                                 <Visibility />
-                              )}
-                           </IconButton>
-                        </InputAdornment>
-                     }
-                     label="Enter your password"
-                  />
-                  {loginFormErrors.password && submitAttempted && (
-                     <FormHelperText error>
-                        {loginFormErrors.password}
-                     </FormHelperText>
-                  )}
-               </FormControl>
+            <FormControl
+               sx={{ marginBottom: '1em' }}
+               variant="outlined"
+               fullWidth
+               error={!!loginFormErrors.password && !!submitAttempted}
+            >
+               <InputLabel>Enter your password</InputLabel>
+               <OutlinedInput
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  value={loginFormValues.password}
+                  onChange={(e) => setFormValue('password', e.target.value)}
+                  endAdornment={
+                     <InputAdornment position="end">
+                        <IconButton
+                           aria-label={
+                              showPassword
+                                 ? 'hide the password'
+                                 : 'display the password'
+                           }
+                           onClick={handleClickShowPassword}
+                           onMouseDown={handleMouseUpOrDownHideShowPassword}
+                           onMouseUp={handleMouseUpOrDownHideShowPassword}
+                           edge="end"
+                        >
+                           {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                     </InputAdornment>
+                  }
+                  label="Enter your password"
+               />
+               {loginFormErrors.password && submitAttempted && (
+                  <FormHelperText error>
+                     {loginFormErrors.password}
+                  </FormHelperText>
+               )}
+            </FormControl>
 
-               <Button
-                  variant="contained"
-                  style={{ width: '100%', marginBottom: '1em' }}
-                  title="Login"
-                  type="submit"
-                  onClick={submitLoginForm}
-               >
-                  Login
-               </Button>
-            </div>
+            <Button
+               variant="contained"
+               style={{ width: '100%', marginBottom: '1em' }}
+               title="Login"
+               type="submit"
+               onClick={submitLoginForm}
+            >
+               Login
+            </Button>
          </div>
          {/* TODO: Basic unstyled error toaster - to be improved later */}
          <Snackbar

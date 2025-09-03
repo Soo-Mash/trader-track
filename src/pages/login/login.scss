@@ -1,14 +1,14 @@
-.login-card {
-   width: 100%;
-   max-width: 25em;
-   @media (min-width: 600px) {
-      width: 50%;
-   }
-}
-
-.container-login-card {
+.page-login {
    display: flex;
-   flex-direction: column;
    justify-content: center;
    align-items: center;
+   width: 100%;
+
+   .login-card {
+      width: 100%;
+      max-width: 25em;
+      @media (min-width: 600px) {
+         width: 50%;
+      }
+   }
 }
