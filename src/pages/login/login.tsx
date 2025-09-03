@@ -116,7 +116,7 @@ const Login = () => {
    }, [loginFormValues])
 
    return (
-      <div className="page-login">
+      <div className="page page-login">
          {/* TODO: convert to MUI Paper with custom styling instead of div with custom styling */}
          <div className="card-big login-card ">
             <h2>Login</h2>

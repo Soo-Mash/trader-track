@@ -82,6 +82,11 @@ button:focus-visible {
    }
 }
 
+.page {
+   display: flex;
+   width: 100%;
+}
+
 .card-big {
    background-color: vars.$color-light;
    border-radius: 10px;
