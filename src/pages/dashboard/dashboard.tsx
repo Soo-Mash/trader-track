@@ -29,7 +29,7 @@ const Dashboard = () => {
          <Box
             sx={{
                height: '100%',
-               width: 250,
+               minWidth: 200, // replaced width with minWidth
                backgroundColor: 'white',
                marginRight: 2,
             }}
