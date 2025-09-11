@@ -4,6 +4,11 @@
    width: 100%;
 
    .header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
       padding: 1rem;
       background-color: #f8f9fa;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
