@@ -26,16 +26,6 @@ const Dashboard = () => {
 
    return (
       <div className="page page-dashboard">
-         <Box
-            sx={{
-               height: '100%',
-               minWidth: 200,
-               backgroundColor: 'white',
-               marginRight: 2,
-            }}
-         >
-            Sidebar placeholder (use MUI Drawer later)
-         </Box>
          <Box sx={{ flexGrow: 1, flexDirection: 'column' }}>
             <Grid
                container
